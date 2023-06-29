@@ -1,0 +1,18 @@
+<meta charset="UTF-8">
+<script>
+    //Problema: Maior 2
+    //Construa um algoritmo que leia dois números inteiros. Verifique qual dos dois números é maior e o escreva.
+
+    //Entrada
+    const n1 = parseFloat(prompt("Insira um valor:").trim().replace(",","."));
+    const n2 = parseFloat(prompt("Insira um valor diferente do primeiro:").trim().replace(",","."));
+    
+    //Processamento
+    let mensagemF = "";
+    (isNaN(n1) || isNaN(n2)) ? alert(`Um dos valores não é um número!`)
+    : mensagemF = (n1 > n2) ? "Número 1 é maior que o número 2" : mensagemF = "Número 2 é maior que número 1" ;
+    
+    //Saída
+    document.write(mensagemF)
+
+</script>

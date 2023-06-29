@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+<script>
+    //Problema: Balanço financeiro
+    // Faça um script que peça para o usuário informar as despesas relacionadas com:
+    // - Conta de água
+    // - Conta de energia elétrica
+    // - Conta de telefone
+    // - Supermercado
+    // Também peça para o usuário informar o valor que recebe de remuneração mensal (salário), proveniente da sua atuação profissional.
+    // Verifique se o usuário ganha mais do que recebe e apresente em tela, indicando quanto que sobrou após o pagamento das contas ou quanto que faltou para poder pagar todas as contas previstas.
+
+    //Entrada
+    const contaAgua = parseFloat(prompt("Insira quanto você gasta de despesa com água:").trim().replace(",","."));
+    const contaEnergia = parseFloat(prompt("Insira quanto você gasta de despesa com energia:").trim().replace(",","."));
+    const contaTelefone = parseFloat(prompt("Insira quanto você gasta de despesa com telefone:").trim().replace(",","."));
+    const mercado = parseFloat(prompt("Insira quanto você gasta de despesa com supermercado:").trim().replace(",","."));
+    const salario = parseFloat(prompt("Insira quanto você recebe de remuneração mensal:").trim().replace(",","."));
+
+    //Processamento
+    const despesaMes = contaAgua + contaEnergia + contaTelefone + mercado;
+    const diferenca = salario - despesaMes;
+    (diferenca > 0) ? alert(`O seu salário é maior que as despesas, sobra: R$ ${diferenca.toFixed(2).replace(".",",")} por mês`) : 
+    (diferenca < 0) ? alert(`O seu salário é menor que as despesas, falta: R$ ${(diferenca * -1).toFixed(2).replace(".",",")}`) :
+    (diferenca == 0) ? alert(`O seu salário é igual a sua despesa, valor = R$ ${salario.toFixed(2).replace(".",",")}`) :
+    alert(`Dados inválidos.`);
+    
+    
+    //Saída
+    
+</script>

@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+<script>
+    //Problema: Meio de transporte mais barato
+    // Faça um script que peça para o usuário informar o preço do litro do combustível e a quantidade de litros utilizados para se deslocar para o trabalho diariamente.
+    // Peça também ao programa para o usuário informar o preço do transporte público que deverá pagar para se deslocar ao trabalho diariamente.
+    // Verifique qual é o meio de transporte mais barato e apresente em tela, especificando quanto custará para ir e voltar do trabalho diariamente.
+
+    //Entrada
+    const precoCombus = parseFloat(prompt("Insira o preço do combustível").trim().replace(",", "."));
+    const litroTrab = parseFloat(prompt("Insira o quanto de combustível você utiliza para ir ao trabalho diariamente:").trim().replace(",", "."));
+    const precoPub1 = parseFloat(prompt("Insira o preço do transporte público que pagará ao ir ao trabalho diariamente:").trim().replace(",", "."));
+
+    //Processamento
+    const precoPub = precoPub1 * 2;
+    const precoDiario = precoCombus * (litroTrab * 2); // ida e volta
+    let mensagemF = ""
+    mensagemF = (precoDiario > precoPub) ? `É mais barato você ir de transporte público, preço do transporte público = R$ ${precoPub.toFixed(2).replace(".", ",")} preço de carro = R$ ${precoDiario.toFixed(2).replace(".", ",")}` : 
+    mensagemF = (precoPub > precoDiario) ? `É mais barato você ir de carro, preço do transporte público = R$ ${precoPub.toFixed(2).replace(".", ",")} preço de carro = R$ ${precoDiario.toFixed(2).replace(".", ",")}` : 
+    mensagemF = (precoPub == precoDiario) ? `Os dois possuem o mesmo preço, preço: R$ ${precoDiario.toFixed(2).replace(".", ",")} e R$ ${precoPub.toFixed(2).replace(".", ",")}` : mensagemF = "Dados inválidos." ;
+
+    //Saída
+    alert(mensagemF);
+
+</script>
